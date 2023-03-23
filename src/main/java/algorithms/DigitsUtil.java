@@ -5,11 +5,11 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class DigitsUtil {
 
-    public int sumDigits(int number) {
+    public int numberOfDigitsRecursive(int number) {
         if (number == 0) {
             return number;
         }
-        return number % 10 + sumDigits(number / 10);
+        return number % 10 + numberOfDigitsRecursive(number / 10);
     }
 
     public int numberOfDigitsMultiplication(int number) {
@@ -23,10 +23,10 @@ public class DigitsUtil {
     }
 
     public int numberOfDigitsDigitsDividingWithPowersOfTwo(int number) {
-        int length = 1;
         if (number == 0) {
             return 0;
         }
+        int length = 1;
         if (number >= 100000000) {
             length += 8;
             number /= 100000000;

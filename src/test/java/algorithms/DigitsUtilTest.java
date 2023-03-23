@@ -11,13 +11,13 @@ class DigitsUtilTest {
 
     @Test
     @DisplayName("Digits should be added correctly")
-    void sumDigits() {
+    void numberOfDigitsRecursive() {
         // given
         List<Integer> inputNumbers = List.of(123, 351, 1, 0, 10);
         List<Integer> answers = List.of(6, 9, 1, 0, 1);
         // expect:
         for (int i = 0; i < inputNumbers.size(); i++) {
-            assertThat(DigitsUtil.sumDigits(inputNumbers.get(i))).isEqualTo(answers.get(i));
+            assertThat(DigitsUtil.numberOfDigitsRecursive(inputNumbers.get(i))).isEqualTo(answers.get(i));
         }
     }
 
