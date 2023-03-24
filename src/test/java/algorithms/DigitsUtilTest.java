@@ -42,4 +42,17 @@ class DigitsUtilTest {
             assertThat(DigitsUtil.numberOfDigitsDigitsDividingWithPowersOfTwo(inputNumbers.get(i))).isEqualTo(answers.get(i));
         }
     }
+
+    @Test
+    void sumDigits() {
+        assertThat(DigitsUtil.sumDigits(-213)).isEqualTo(-1);
+        assertThat(DigitsUtil.sumDigits(0)).isZero();
+        assertThat(DigitsUtil.sumDigits(1)).isEqualTo(1);
+        assertThat(DigitsUtil.sumDigits(125)).isEqualTo(8);
+    }
+
+    @Test
+    void reverseDigits() {
+        assertThat(DigitsUtil.reverseDigits(-100)).isEqualTo(-1);
+    }
 }

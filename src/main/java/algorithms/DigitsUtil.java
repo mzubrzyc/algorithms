@@ -44,4 +44,31 @@ public class DigitsUtil {
         }
         return length;
     }
+
+    public long sumDigits(int number) {
+        if (number < 0) {
+            return -1;
+        }
+        if (number == 0) {
+            return 0;
+        }
+        return number % 10 + sumDigits(number / 10);
+    }
+
+    public int reverseDigits(int number) {
+        if (number == 0) {
+            return 0;
+        }
+        int absNumber = Math.abs(number);
+        int sign = number / absNumber;
+        int reversedNumber = 0;
+        int reminder;
+        int tempNumber = absNumber;
+        while (tempNumber > 0) {
+            reminder = tempNumber % 10;
+            tempNumber /= 10;
+            reversedNumber = reversedNumber * 10 + reminder;
+        }
+        return reversedNumber * sign;
+    }
 }
