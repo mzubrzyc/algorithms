@@ -14,6 +14,9 @@ public class LargestPrimeFactor {
      * @return long Largest Prime Factor
      */
     public int find(long number) {
+        if (number < 2) {
+            return -1;
+        }
         int i;
         for (i = 2; i <= number; i++) {
             if (number % i == 0) {
