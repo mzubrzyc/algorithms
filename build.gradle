@@ -9,12 +9,10 @@ repositories {
     mavenCentral()
 }
 
-ext {
-    setProperty("log4jVersion", '2.20.0')
-    setProperty("lombokVersion", '1.18.26')
-    setProperty("jacksonVersion", '2.14.2')
-    setProperty("junitVersion", '5.9.2')
-}
+ext["log4jVersion"] = '2.20.0'
+ext["lombokVersion"] = '1.18.26'
+ext["jacksonVersion"] = '2.14.2'
+ext["junitVersion"] = '5.9.2'
 
 dependencies {
     // JSON
