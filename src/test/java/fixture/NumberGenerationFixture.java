@@ -13,7 +13,7 @@ import java.util.stream.Stream;
 @UtilityClass
 public final class NumberGenerationFixture {
 
-    public List<Integer> generateArrayOfRandomIntNumbers(long size, int upperLimit) {
+    public List<Integer> generateListOfRandomIntNumbers(int size, int upperLimit) {
         final Random random;
         try {
             random = SecureRandom.getInstance("NativePRNG");
@@ -23,8 +23,9 @@ public final class NumberGenerationFixture {
         }
         return Stream.generate(() -> random.nextInt(upperLimit)).limit(size).toList();
     }
-    public List<Integer> generateArrayOfRandomIntNumbers(long size) {
-        return generateArrayOfRandomIntNumbers(size, Integer.MAX_VALUE);
+
+    public List<Integer> generateListOfRandomIntNumbers(int size) {
+        return generateListOfRandomIntNumbers(size, Integer.MAX_VALUE);
     }
 
 }

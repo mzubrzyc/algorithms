@@ -8,7 +8,7 @@ import java.util.List;
 
 @Slf4j
 @UtilityClass
-public final class SortingNumbers {
+public final class SortBubble {
 
     public List<Integer> bubbleSort(List<Integer> numbers) {
         int temp;
