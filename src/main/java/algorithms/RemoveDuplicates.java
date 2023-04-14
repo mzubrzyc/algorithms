@@ -16,11 +16,11 @@ public class RemoveDuplicates {
         int previous = arrayWithDuplicates[0];
         result[0] = previous;
         for (int i = 0; i < arrayWithDuplicates.length; i++) {
-            int c = arrayWithDuplicates[i];
-            if (previous != c) {
-                result[i] = c;
+            int arrayWithDuplicatesElement = arrayWithDuplicates[i];
+            if (previous != arrayWithDuplicatesElement) {
+                result[i] = arrayWithDuplicatesElement;
             }
-            previous = c;
+            previous = arrayWithDuplicatesElement;
         }
         return result;
     }
