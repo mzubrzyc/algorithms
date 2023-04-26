@@ -1,8 +1,7 @@
 package algorithms;
 
-import lombok.experimental.UtilityClass;
-
 import java.util.List;
+import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class HighestNumbers {

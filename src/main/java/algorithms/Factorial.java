@@ -1,9 +1,8 @@
 package algorithms;
 
+import java.math.BigInteger;
 import lombok.experimental.UtilityClass;
 import org.apache.commons.math3.util.CombinatoricsUtils;
-
-import java.math.BigInteger;
 
 @UtilityClass
 public class Factorial {

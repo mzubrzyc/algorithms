@@ -27,7 +27,6 @@ public class IsNumberPowerOfTwo {
     }
 
     /**
-     *
      * @param number {@code int}
      * @return {@code boolean} true if number is power of two, elsewhere false
      * @throws IllegalAccessException when number is < 0

@@ -1,14 +1,13 @@
 package algorithms;
 
 import algorithms.utils.RandomGenerator;
+import java.util.Arrays;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.Arrays;
-
 /**
  * <a href="https://www.youtube.com/watch?v=h8eyY7dIiN4">link</a>
- * */
+ */
 @UtilityClass
 @Slf4j
 public class SortQuick {
@@ -18,42 +17,42 @@ public class SortQuick {
     }
 
     private void quickSort(
-            int[] array,
-            int lowIndex,
-            int highIndex
+        int[] array,
+        int lowIndex,
+        int highIndex
     ) {
         if (lowIndex >= highIndex) {
             return;
         }
         int pivotIndex = randomizePivot(
-                lowIndex,
-                highIndex
+            lowIndex,
+            highIndex
         );
         int pivot = array[pivotIndex];
         swapArrayElements(
-                array,
-                pivotIndex,
-                highIndex
+            array,
+            pivotIndex,
+            highIndex
         );
         log.info("lowIndex: {}", lowIndex);
-        log.info("highIndex: {}",  highIndex);
+        log.info("highIndex: {}", highIndex);
         log.info("pivotIndex: {}", pivotIndex);
         log.info("pivot: {}", pivot);
         int leftPointer = partitioning(
-                array,
-                lowIndex,
-                highIndex,
-                pivot
+            array,
+            lowIndex,
+            highIndex,
+            pivot
         );
         quickSort(
-                array,
-                lowIndex,
-                leftPointer - 1
+            array,
+            lowIndex,
+            leftPointer - 1
         );
         quickSort(
-                array,
-                leftPointer + 1,
-                highIndex
+            array,
+            leftPointer + 1,
+            highIndex
         );
     }
 
@@ -73,16 +72,16 @@ public class SortQuick {
             }
             if (leftPointer != rightPointer) {
                 swapArrayElements(
-                        array,
-                        leftPointer,
-                        rightPointer
+                    array,
+                    leftPointer,
+                    rightPointer
                 );
             }
         }
         swapArrayElements(
-                array,
-                leftPointer,
-                highIndex
+            array,
+            leftPointer,
+            highIndex
         );
         return leftPointer;
     }

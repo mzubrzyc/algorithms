@@ -1,10 +1,9 @@
 package algorithms;
 
-import lombok.experimental.UtilityClass;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
+import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class PerfectNumber {
@@ -24,8 +23,8 @@ public class PerfectNumber {
 
     public List<Integer> findInRange(int beginning, int end) {
         return IntStream.range(beginning, end + 1)
-                .filter(PerfectNumber::isPerfect)
-                .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+                        .filter(PerfectNumber::isPerfect)
+                        .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
     }
 
 }

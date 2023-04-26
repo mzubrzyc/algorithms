@@ -1,9 +1,8 @@
 package algorithms.utils;
 
+import java.security.SecureRandom;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
-
-import java.security.SecureRandom;
 
 @UtilityClass
 @Slf4j

@@ -1,18 +1,11 @@
 package algorithms;
 
-import lombok.experimental.UtilityClass;
-
 import java.util.ArrayList;
 import java.util.List;
+import lombok.experimental.UtilityClass;
 
 @UtilityClass
 public class MissingNumberFinder {
-
-
-    public static void main(String[] args) {
-        int[] arr = {1, 3, 7, 6, 2};
-        find(arr, 7);
-    }
 
     public List<Integer> find(int[] arr, int n) {
         int arrLength = arr.length;
