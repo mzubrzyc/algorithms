@@ -13,8 +13,8 @@ class DigitsUtilTest {
     @DisplayName("Digits should be added correctly")
     void numberOfDigitsRecursive() {
         // given
-        List<Integer> inputNumbers = List.of(123, 351, 1, 0, 10);
-        List<Integer> answers = List.of(6, 9, 1, 0, 1);
+        List<Integer> inputNumbers = List.of(123, 3510, 1, 0, 10, -100);
+        List<Integer> answers = List.of(3, 4, 1, 0, 2, -1);
         // expect:
         for (int i = 0; i < inputNumbers.size(); i++) {
             assertThat(DigitsUtil.numberOfDigitsRecursive(inputNumbers.get(i))).isEqualTo(answers.get(i));

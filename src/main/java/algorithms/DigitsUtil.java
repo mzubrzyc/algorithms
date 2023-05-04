@@ -6,10 +6,13 @@ import lombok.experimental.UtilityClass;
 public class DigitsUtil {
 
     public int numberOfDigitsRecursive(int number) {
+        if (number < 0) {
+            return -1;
+        }
         if (number == 0) {
             return number;
         }
-        return number % 10 + numberOfDigitsRecursive(number / 10);
+        return 1 + numberOfDigitsRecursive(number / 10);
     }
 
     public int numberOfDigitsMultiplication(int number) {

@@ -15,7 +15,5 @@ class SortBubbleTest {
         List<Integer> sortedIntegers = SortBubble.bubbleSort(integers);
         assertThat(sortedIntegers).isNotEmpty();
 
-
-
     }
 }

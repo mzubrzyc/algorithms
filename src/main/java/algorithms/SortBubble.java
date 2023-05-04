@@ -24,7 +24,7 @@ public final class SortBubble {
                 }
             }
         } while (swapped);
-        return Arrays.stream(result).toList();
+        return Arrays.asList(result);
     }
 
 }

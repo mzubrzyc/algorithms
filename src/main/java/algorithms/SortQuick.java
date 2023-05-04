@@ -15,7 +15,13 @@ public class SortQuick {
     public void run(int[] array) {
         quickSort(array, 0, array.length - 1);
     }
-
+/**
+ * Quick sort input array. Pivot number (number used to separate smaller and bigger numbers) is randomized.
+ *
+ * @param array to be sorted
+ * @param lowIndex min index of the array
+ * @param highIndex max index of the array
+ * */
     private void quickSort(
         int[] array,
         int lowIndex,
@@ -60,11 +66,16 @@ public class SortQuick {
         return RandomGenerator.drawForRange(lowIndex, highIndex);
     }
 
-    private int partitioning(int[] array, int lowIndex, int highIndex, int pivot) {
+    private int partitioning(
+        int[] array,
+        int lowIndex,
+        int highIndex,
+        int pivot
+    ) {
         int leftPointer = lowIndex;
         int rightPointer = highIndex;
         while (leftPointer < rightPointer) {
-            while (array[leftPointer] <= pivot && leftPointer < rightPointer) {
+            while (array[leftPointer] < pivot && leftPointer < rightPointer) {
                 leftPointer++;
             }
             while (array[rightPointer] >= pivot && leftPointer < rightPointer) {
@@ -78,15 +89,21 @@ public class SortQuick {
                 );
             }
         }
-        swapArrayElements(
-            array,
-            leftPointer,
-            highIndex
-        );
+        if (leftPointer != highIndex) {
+            swapArrayElements(
+                array,
+                leftPointer,
+                highIndex
+            );
+        }
         return leftPointer;
     }
 
-    private static void swapArrayElements(int[] array, int index1, int index2) {
+    private static void swapArrayElements(
+        int[] array,
+        int index1,
+        int index2
+    ) {
         log.info("swapping, array: {}, index1: {}, index2: {}", Arrays.toString(array), index1, index2);
         int temp = array[index1];
         array[index1] = array[index2];

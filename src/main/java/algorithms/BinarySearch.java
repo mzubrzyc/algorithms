@@ -3,6 +3,10 @@ package algorithms;
 import java.util.Arrays;
 import lombok.experimental.UtilityClass;
 
+/**
+ * We narrow the serach to the half containing (or not) the searching number.
+ *
+ */
 @UtilityClass
 public class BinarySearch {
 

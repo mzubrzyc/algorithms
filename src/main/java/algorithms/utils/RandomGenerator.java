@@ -8,8 +8,9 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 public class RandomGenerator {
 
+    private final SecureRandom secureRandom = new SecureRandom();
+
     public int drawForRange(int min, int max) {
-        SecureRandom secureRandom = new SecureRandom();
         return secureRandom.nextInt(Math.abs(max - min)) + min;
     }
 
