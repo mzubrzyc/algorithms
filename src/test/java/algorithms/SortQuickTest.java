@@ -20,8 +20,8 @@ class SortQuickTest {
         );
         SortQuick.run(array);
         assertThat(array).containsExactly(sortedResult);
-        array = new int[] {2, 5, 9, 7, 3, 8};
+        array = new int[] {2, 5, 9, 9, 7, 3, 8};
         SortQuick.run(array);
-        assertThat(array).containsExactly(2, 3, 5, 7, 8, 9);
+        assertThat(array).containsExactly(2, 3, 5, 7, 8, 9, 9);
     }
 }

@@ -11,17 +11,17 @@ public class RemoveDuplicates {
      */
     public int[] fromArray(int[] arrayWithDuplicates) {
         Arrays.sort(arrayWithDuplicates);
-        int[] result = new int[arrayWithDuplicates.length];
+        int[] resultWithoutDuplicates = new int[arrayWithDuplicates.length];
         int previous = arrayWithDuplicates[0];
-        result[0] = previous;
-        for (int i = 0; i < arrayWithDuplicates.length; i++) {
+        resultWithoutDuplicates[0] = previous;
+        for (int i = 1; i < arrayWithDuplicates.length; i++) {
             int arrayWithDuplicatesElement = arrayWithDuplicates[i];
             if (previous != arrayWithDuplicatesElement) {
-                result[i] = arrayWithDuplicatesElement;
+                resultWithoutDuplicates[i] = arrayWithDuplicatesElement;
             }
             previous = arrayWithDuplicatesElement;
         }
-        return result;
+        return resultWithoutDuplicates;
     }
 
 }
