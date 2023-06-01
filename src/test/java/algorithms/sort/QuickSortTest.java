@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.sort;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -7,7 +7,7 @@ import fixture.NumberGenerationFixture;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-class SortQuickTest {
+class QuickSortTest {
 
     @Test
     void run() {
@@ -18,10 +18,11 @@ class SortQuickTest {
                     .sorted()
                     .toList()
         );
-        SortQuick.run(array);
+        QuickSort.run(array);
         assertThat(array).containsExactly(sortedResult);
         array = new int[] {2, 5, 9, 9, 7, 3, 8};
-        SortQuick.run(array);
+        QuickSort.run(array);
         assertThat(array).containsExactly(2, 3, 5, 7, 8, 9, 9);
     }
+
 }

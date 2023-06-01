@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.sort;
 
 import algorithms.utils.RandomGenerator;
 import java.util.Arrays;
@@ -10,7 +10,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @UtilityClass
 @Slf4j
-public class SortQuick {
+public class QuickSort {
 
     public void run(int[] array) {
         quickSort(array, 0, array.length - 1);

@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.sort;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @UtilityClass
-public final class SortBubble {
+public final class BubbleSort {
 
     public List<Integer> bubbleSort(List<Integer> numbers) {
         int temp;
