@@ -1,27 +1,37 @@
 package algorithms.sort;
 
+import algorithms.utils.ArrayUtil;
 import algorithms.utils.RandomGenerator;
-import java.util.Arrays;
-import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * <a href="https://www.youtube.com/watch?v=h8eyY7dIiN4">link</a>
  */
-@UtilityClass
 @Slf4j
-public class QuickSort {
+public class QuickSort implements SortAlgorithm {
 
-    public void run(int[] array) {
-        quickSort(array, 0, array.length - 1);
+    private static final QuickSort INSTANCE = new QuickSort();
+
+    private QuickSort() {
     }
-/**
- * Quick sort input array. Pivot number (number used to separate smaller and bigger numbers) is randomized.
- *
- * @param array to be sorted
- * @param lowIndex min index of the array
- * @param highIndex max index of the array
- * */
+
+    public static QuickSort getInstance() {
+        return INSTANCE;
+    }
+
+    @Override
+    public int[] accept(int[] array) {
+        quickSort(array, 0, array.length - 1);
+        return array;
+    }
+
+    /**
+     * Quick sort input array. Pivot number (number used to separate smaller and bigger numbers) is randomized.
+     *
+     * @param array     to be sorted
+     * @param lowIndex  min index of the array
+     * @param highIndex max index of the array
+     */
     private void quickSort(
         int[] array,
         int lowIndex,
@@ -35,7 +45,7 @@ public class QuickSort {
             highIndex
         );
         int pivot = array[pivotIndex];
-        swapArrayElements(
+        ArrayUtil.swap(
             array,
             pivotIndex,
             highIndex
@@ -44,7 +54,7 @@ public class QuickSort {
         log.info("highIndex: {}", highIndex);
         log.info("pivotIndex: {}", pivotIndex);
         log.info("pivot: {}", pivot);
-        int leftPointer = partitioning(
+        int leftPointer = partition(
             array,
             lowIndex,
             highIndex,
@@ -66,7 +76,7 @@ public class QuickSort {
         return RandomGenerator.drawForRange(lowIndex, highIndex);
     }
 
-    private int partitioning(
+    private int partition(
         int[] array,
         int lowIndex,
         int highIndex,
@@ -82,7 +92,7 @@ public class QuickSort {
                 rightPointer--;
             }
             if (leftPointer != rightPointer) {
-                swapArrayElements(
+                ArrayUtil.swap(
                     array,
                     leftPointer,
                     rightPointer
@@ -90,24 +100,13 @@ public class QuickSort {
             }
         }
         if (leftPointer != highIndex) {
-            swapArrayElements(
+            ArrayUtil.swap(
                 array,
                 leftPointer,
                 highIndex
             );
         }
         return leftPointer;
-    }
-
-    private static void swapArrayElements(
-        int[] array,
-        int index1,
-        int index2
-    ) {
-        log.info("swapping, array: {}, index1: {}, index2: {}", Arrays.toString(array), index1, index2);
-        int temp = array[index1];
-        array[index1] = array[index2];
-        array[index2] = temp;
     }
 
 }
