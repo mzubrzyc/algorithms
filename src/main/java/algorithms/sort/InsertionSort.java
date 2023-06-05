@@ -7,8 +7,6 @@ public class InsertionSort implements SortAlgorithm {
     private InsertionSort() {
     }
 
-
-
     public static InsertionSort getInstance() {
         return INSTANCE;
     }
@@ -20,7 +18,17 @@ public class InsertionSort implements SortAlgorithm {
         return inputArrayClone;
     }
 
-    private void sort(int[] inputArrayClone) {
+    private void sort(int[] inputArray) {
+        for (int keyIndex = 1; keyIndex < inputArray.length; keyIndex++) {
+            int key = inputArray[keyIndex];
+            int checkIndex = keyIndex - 1;
 
+            while (checkIndex >= 0 && key < inputArray[checkIndex]) {
+                inputArray[checkIndex + 1] = inputArray[checkIndex];
+                --checkIndex;
+            }
+
+            inputArray[checkIndex + 1] = key;
+        }
     }
 }
