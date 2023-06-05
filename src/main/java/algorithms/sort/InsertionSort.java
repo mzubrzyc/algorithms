@@ -1,6 +1,6 @@
 package algorithms.sort;
 
-public class InsertionSort {
+public class InsertionSort implements SortAlgorithm {
 
     private static final InsertionSort INSTANCE = new InsertionSort();
 
@@ -11,5 +11,16 @@ public class InsertionSort {
 
     public static InsertionSort getInstance() {
         return INSTANCE;
+    }
+
+    @Override
+    public int[] accept(int[] inputArray) {
+        int[] inputArrayClone = inputArray.clone();
+        sort(inputArrayClone);
+        return inputArrayClone;
+    }
+
+    private void sort(int[] inputArrayClone) {
+
     }
 }
