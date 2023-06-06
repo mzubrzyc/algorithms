@@ -16,7 +16,8 @@ public class MergeSort implements SortAlgorithm {
 
     @Override
     public int[] accept(int[] inputArray) {
-        return sort(inputArray);
+        int[] inputArrayClone = inputArray.clone();
+        return sort(inputArrayClone);
     }
 
     private int[] sort(int[] inputArray) {

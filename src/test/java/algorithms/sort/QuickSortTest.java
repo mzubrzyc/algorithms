@@ -20,12 +20,10 @@ class QuickSortTest {
                     .sorted()
                     .toList()
         );
-        quickSort.accept(array);
-        assertThat(array).containsExactly(expected);
+        assertThat(quickSort.accept(array)).containsExactly(expected);
         array = new int[] {2, 5, 9, 9, 7, 3, 8};
         expected = new int[] {2, 3, 5, 7, 8, 9, 9};
-        quickSort.accept(array);
-        assertThat(array).containsExactly(expected);
+        assertThat(quickSort.accept(array)).containsExactly(expected);
     }
 
 }

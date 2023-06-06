@@ -1,5 +1,8 @@
 package algorithms.sort;
 
+/**
+ * <a href="https://www.programiz.com/dsa/bubble-sort">programiz.com</a>
+ * */
 public class InsertionSort implements SortAlgorithm {
 
     private static final InsertionSort INSTANCE = new InsertionSort();

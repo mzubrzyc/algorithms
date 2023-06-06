@@ -20,9 +20,10 @@ public class QuickSort implements SortAlgorithm {
     }
 
     @Override
-    public int[] accept(int[] array) {
-        quickSort(array, 0, array.length - 1);
-        return array;
+    public int[] accept(int[] inputArray) {
+        int[] inputArrayClone = inputArray.clone();
+        quickSort(inputArrayClone, 0, inputArrayClone.length - 1);
+        return inputArrayClone;
     }
 
     /**
