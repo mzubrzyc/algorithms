@@ -5,7 +5,6 @@ import lombok.experimental.UtilityClass;
 
 /**
  * We narrow the serach to the half containing (or not) the searching number.
- *
  */
 @UtilityClass
 public class BinarySearch {
@@ -18,7 +17,7 @@ public class BinarySearch {
             int middleIndex = (low + high) / 2;
             int middleNumber = numbers[middleIndex];
             if (numberToFind == middleNumber) {
-                return numberToFind;
+                return middleIndex;
             }
             if (numberToFind < middleNumber) {
                 high = middleIndex - 1;
@@ -28,4 +27,19 @@ public class BinarySearch {
         }
         return -1;
     }
+
+    public int searchRecursive(int[] numbers, int numberToFind, int low, int high) {
+        if (high >= low) {
+            int middleIndex = low + (high - low) / 2;
+            if (numberToFind == numbers[middleIndex]) {
+                return middleIndex;
+            }
+            if (numberToFind < numbers[middleIndex]) {
+                return searchRecursive(numbers, numberToFind, low, middleIndex - 1);
+            }
+            return searchRecursive(numbers, numberToFind, middleIndex + 1, high);
+        }
+        return -1;
+    }
+
 }
