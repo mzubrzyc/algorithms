@@ -22,16 +22,14 @@ public class InsertionSort implements SortAlgorithm {
     }
 
     private void sort(int[] inputArray) {
-        for (int keyIndex = 1; keyIndex < inputArray.length; keyIndex++) {
-            int key = inputArray[keyIndex];
-            int checkIndex = keyIndex - 1;
-
-            while (checkIndex >= 0 && key < inputArray[checkIndex]) {
+        for (int upperIndex = 1; upperIndex < inputArray.length; upperIndex++) {
+            int upperValue = inputArray[upperIndex];
+            int checkIndex = upperIndex - 1;
+            while (checkIndex >= 0 && inputArray[checkIndex] > upperValue) {
                 inputArray[checkIndex + 1] = inputArray[checkIndex];
                 --checkIndex;
             }
-
-            inputArray[checkIndex + 1] = key;
+            inputArray[checkIndex + 1] = upperValue;
         }
     }
 }

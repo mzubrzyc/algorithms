@@ -5,7 +5,8 @@ import algorithms.utils.RandomGenerator;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * <a href="https://www.youtube.com/watch?v=h8eyY7dIiN4">link</a>
+ * <a href="https://www.youtube.com/watch?v=h8eyY7dIiN4">YouTube</a><br> - solution used in this file
+ * <a href="https://www.programiz.com/dsa/quick-sort">programiz.com</a> - much slower solution than YouTube option
  */
 @Slf4j
 public class QuickSort implements SortAlgorithm {
@@ -22,7 +23,7 @@ public class QuickSort implements SortAlgorithm {
     @Override
     public int[] accept(int[] inputArray) {
         int[] inputArrayClone = inputArray.clone();
-        quickSort(inputArrayClone, 0, inputArrayClone.length - 1);
+        sort(inputArrayClone, 0, inputArrayClone.length - 1);
         return inputArrayClone;
     }
 
@@ -33,7 +34,7 @@ public class QuickSort implements SortAlgorithm {
      * @param lowIndex  min index of the array
      * @param highIndex max index of the array
      */
-    private void quickSort(
+    private void sort(
         int[] array,
         int lowIndex,
         int highIndex
@@ -51,30 +52,22 @@ public class QuickSort implements SortAlgorithm {
             pivotIndex,
             highIndex
         );
-        log.info("lowIndex: {}", lowIndex);
-        log.info("highIndex: {}", highIndex);
-        log.info("pivotIndex: {}", pivotIndex);
-        log.info("pivot: {}", pivot);
         int leftPointer = partition(
             array,
             lowIndex,
             highIndex,
             pivot
         );
-        quickSort(
+        sort(
             array,
             lowIndex,
             leftPointer - 1
         );
-        quickSort(
+        sort(
             array,
             leftPointer + 1,
             highIndex
         );
-    }
-
-    private int randomizePivot(int lowIndex, int highIndex) {
-        return RandomGenerator.drawForRange(lowIndex, highIndex);
     }
 
     private int partition(
@@ -108,6 +101,10 @@ public class QuickSort implements SortAlgorithm {
             );
         }
         return leftPointer;
+    }
+
+    private int randomizePivot(int lowIndex, int highIndex) {
+        return RandomGenerator.drawForRange(lowIndex, highIndex);
     }
 
 }

@@ -3,7 +3,7 @@ package algorithms.sort;
 import java.util.Arrays;
 
 /**
- * <a href="https://www.youtube.com/watch?v=bOk35XmHPKs">youtube</a>
+ * <a href="https://www.youtube.com/watch?v=bOk35XmHPKs">YouTube</a>
  * <a href="https://www.programiz.com/dsa/merge-sort">programiz</a>
  */
 public class MergeSort implements SortAlgorithm {

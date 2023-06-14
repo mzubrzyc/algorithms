@@ -7,12 +7,12 @@ import fixture.NumberGenerationFixture;
 import java.util.List;
 import org.junit.jupiter.api.Test;
 
-class QuickSortTest {
+class ShellSortTest {
 
-    private final SortAlgorithm quickSort = QuickSort.getInstance();
+    private final ShellSort shellSort = ShellSort.getInstance();
 
     @Test
-    void run() {
+    void accept() {
         List<Integer> integers = NumberGenerationFixture.generateListOfRandomIntNumbers(10, 10);
         int[] array = ArrayUtil.fromListOfIntegers(integers);
         int[] expected = ArrayUtil.fromListOfIntegers(
@@ -20,16 +20,9 @@ class QuickSortTest {
                     .sorted()
                     .toList()
         );
-        assertThat(quickSort.accept(array)).containsExactly(expected);
-        array = new int[] {2, 5, 9, 9, 7, 3, 8};
-        expected = new int[] {2, 3, 5, 7, 8, 9, 9};
-        assertThat(quickSort.accept(array)).containsExactly(expected);
+        assertThat(shellSort.accept(array)).containsExactly(expected);
+        array = new int[] {9, 8, 3, 7, 5, 6, 4, 1};
+        expected = new int[] {1, 3, 4, 5, 6, 7, 8, 9};
+        assertThat(shellSort.accept(array)).containsExactly(expected);
     }
-
-    @Test
-    void test() {
-        int[] array = new int[] {1, 1, 1, 4, 3};
-        quickSort.accept(array);
-    }
-
 }
