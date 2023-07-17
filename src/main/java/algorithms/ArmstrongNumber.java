@@ -2,6 +2,9 @@ package algorithms;
 
 import lombok.experimental.UtilityClass;
 
+/**
+ * An Armstrong number is one whose sum of digits raised to the power three equals the number itself.
+ */
 @UtilityClass
 public class ArmstrongNumber {
 

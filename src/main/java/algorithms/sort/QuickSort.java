@@ -12,8 +12,10 @@ import lombok.extern.slf4j.Slf4j;
 public class QuickSort implements SortAlgorithm {
 
     private static final QuickSort INSTANCE = new QuickSort();
+    private final RandomGenerator randomGenerator;
 
     private QuickSort() {
+        this.randomGenerator = RandomGenerator.INSTANCE();
     }
 
     public static QuickSort getInstance() {
@@ -104,7 +106,7 @@ public class QuickSort implements SortAlgorithm {
     }
 
     private int randomizePivot(int lowIndex, int highIndex) {
-        return RandomGenerator.drawForRange(lowIndex, highIndex);
+        return randomGenerator.drawForRange(lowIndex, highIndex);
     }
 
 }

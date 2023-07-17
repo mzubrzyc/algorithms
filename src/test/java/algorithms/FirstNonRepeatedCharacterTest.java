@@ -11,18 +11,18 @@ class FirstNonRepeatedCharacterTest {
     @Test
     @SneakyThrows
     void get() {
-        assertThat(FirstNonRepeatedCharacter.getByApproachOne("khjsdfkhi")).isEqualTo('j');
-        assertThat(FirstNonRepeatedCharacter.getByApproachOne("hello")).isEqualTo('h');
-        Assertions.assertThatThrownBy(() -> FirstNonRepeatedCharacter.getByApproachOne("abcdabcd"))
+        assertThat(FirstNonRepeatedCharacter.get("khjsdfkhi")).isEqualTo('j');
+        assertThat(FirstNonRepeatedCharacter.get("hello")).isEqualTo('h');
+        Assertions.assertThatThrownBy(() -> FirstNonRepeatedCharacter.get("abcdabcd"))
             .isInstanceOf(FirstNonRepeatedCharacter.LetterNotFoundException.class);
     }
 
     @Test
     @SneakyThrows
     void getByApproachTwo() {
-        assertThat(FirstNonRepeatedCharacter.getByApproachTwo("khjsdfkhi")).isEqualTo('j');
-        assertThat(FirstNonRepeatedCharacter.getByApproachTwo("hello")).isEqualTo('h');
-        Assertions.assertThatThrownBy(() -> FirstNonRepeatedCharacter.getByApproachTwo("abcdabcd"))
+        assertThat(FirstNonRepeatedCharacter.getUsingStream("khjsdfkhi")).isEqualTo('j');
+        assertThat(FirstNonRepeatedCharacter.getUsingStream("hello")).isEqualTo('h');
+        Assertions.assertThatThrownBy(() -> FirstNonRepeatedCharacter.getUsingStream("abcdabcd"))
                   .isInstanceOf(FirstNonRepeatedCharacter.LetterNotFoundException.class);
     }
 }

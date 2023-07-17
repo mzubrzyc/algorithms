@@ -8,6 +8,9 @@ public class RemoveDuplicates {
 
     /**
      * <a href="https://javarevisited.blogspot.com/2014/01/how-to-remove-duplicates-from-array-java-without-collection-API.html?source=post_page---------------------------&ref=hackernoon.com#axzz7xnnavhVj">link</a>
+     * <br>
+     * Compare next element to the previous one and if it is unique put it into a table without duplicates.
+     * @param arrayWithDuplicates int array we are removing duplicate elements from.
      */
     public int[] fromArray(int[] arrayWithDuplicates) {
         Arrays.sort(arrayWithDuplicates);
