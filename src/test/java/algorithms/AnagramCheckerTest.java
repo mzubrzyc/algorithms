@@ -1,11 +1,10 @@
 package algorithms;
 
-import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 
 @Slf4j
 class AnagramCheckerTest {
@@ -13,37 +12,30 @@ class AnagramCheckerTest {
     @Test
     void isAnagram() {
         prepareTestCases()
-                .forEach(it -> {
-                            log.info("isAnagram2: {}", it);
-                            assertThat(AnagramChecker.isAnagram(it.word(), it.anagram())).isEqualTo(it.answer());
-                        }
-                );
+            .forEach(it -> assertThat(AnagramChecker.isAnagramByIteration(it.word(), it.anagram())).isEqualTo(it.answer())
+            );
     }
-
 
     @Test
     void isAnagram2() {
         prepareTestCases()
-                .forEach(it -> {
-                            log.info("isAnagram2: {}", it);
-                            assertThat(AnagramChecker.isAnagram2(it.word(), it.anagram())).isEqualTo(it.answer());
-                        }
-                );
+            .forEach(it -> assertThat(AnagramChecker.isAnagramBySort(it.word(), it.anagram())).isEqualTo(it.answer())
+            );
     }
 
-    private List<AnagramAssertValues> prepareTestCases() {
+    private List<AnagramAssertionValues> prepareTestCases() {
         return List.of(
-                new AnagramAssertValues("word", "wrdo", true),
-                new AnagramAssertValues("mary", "army", true),
-                new AnagramAssertValues("stop", "tops", true),
-                new AnagramAssertValues("boat", "btoa", true),
-                new AnagramAssertValues("pure", "in", false),
-                new AnagramAssertValues("fill", "fil", false),
-                new AnagramAssertValues("b", "bbb", false),
-                new AnagramAssertValues("ccc", "ccccccc", false),
-                new AnagramAssertValues("a", "a", true),
-                new AnagramAssertValues("sleep", "slep", false),
-                new AnagramAssertValues("sleep", "slepa", false)
+            new AnagramAssertionValues("word", "wrdo", true),
+            new AnagramAssertionValues("mary", "army", true),
+            new AnagramAssertionValues("stop", "tops", true),
+            new AnagramAssertionValues("boat", "btoa", true),
+            new AnagramAssertionValues("pure", "in", false),
+            new AnagramAssertionValues("fill", "fil", false),
+            new AnagramAssertionValues("b", "bbb", false),
+            new AnagramAssertionValues("ccc", "ccccccc", false),
+            new AnagramAssertionValues("a", "a", true),
+            new AnagramAssertionValues("sleep", "slep", false),
+            new AnagramAssertionValues("sleep", "slepa", false)
         );
     }
 

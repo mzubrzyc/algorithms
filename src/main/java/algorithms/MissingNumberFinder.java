@@ -6,14 +6,14 @@ import lombok.experimental.UtilityClass;
 
 /**
  * Find missing elements in the given range
- * */
+ */
 @UtilityClass
 public class MissingNumberFinder {
 
     /**
      * @param arr array of int numbers we are looking for missing number in
-     * @param n int number marking the biggest number in provided number range
-     * */
+     * @param n   int number marking the biggest number in provided number range
+     */
     public List<Integer> find(int[] arr, int n) {
         int arrLength = arr.length;
         int[] temp = new int[n];

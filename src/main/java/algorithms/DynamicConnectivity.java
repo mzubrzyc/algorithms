@@ -12,7 +12,7 @@ import lombok.experimental.UtilityClass;
  * inst[] id - parent link (site indexed)<br>
  * int[] size - size of component for roots (site indexed)<br>
  * int count - number of components<br>
- * */
+ */
 @UtilityClass
 public class DynamicConnectivity {
 
@@ -27,6 +27,7 @@ public class DynamicConnectivity {
         private final int[] id;
 
         private int count;
+
         public QuickFind(int size) {
             this.id = IntStream.range(0, size).toArray();
             this.count = size;
@@ -60,9 +61,10 @@ public class DynamicConnectivity {
         }
 
     }
-/**
- * Is faster than the quick-find algorithm, because it does not have to go through the entire array for each input pair.
- * */
+
+    /**
+     * Is faster than the quick-find algorithm, because it does not have to go through the entire array for each input pair.
+     */
     class QuickUnion {
 
         private final int[] id;
@@ -148,6 +150,5 @@ public class DynamicConnectivity {
         }
 
     }
-
 
 }

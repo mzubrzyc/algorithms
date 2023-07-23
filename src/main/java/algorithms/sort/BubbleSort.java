@@ -7,6 +7,10 @@ public final class BubbleSort implements SortAlgorithm {
     private BubbleSort() {
     }
 
+    public static BubbleSort getInstance() {
+        return INSTANCE;
+    }
+
     @Override
     public int[] accept(int[] inputArray) {
         int[] inputArrayClone = inputArray.clone();
@@ -28,9 +32,5 @@ public final class BubbleSort implements SortAlgorithm {
                 }
             }
         } while (swapped);
-    }
-
-    public static BubbleSort getInstance() {
-        return INSTANCE;
     }
 }

@@ -12,10 +12,12 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class AnagramChecker {
 
-    public boolean isAnagram(@NonNull String word, @NonNull String anagram) {
+    public boolean isAnagramByIteration(@NonNull String word, @NonNull String anagram) {
         char[] wordChars = word.toCharArray();
         StringBuilder sbAnagram = new StringBuilder(anagram);
-        if (checkForLengthAndEmptiness(word, anagram)) {return false;}
+        if (checkForLengthAndEmptiness(word, anagram)) {
+            return false;
+        }
         for (char c : wordChars) {
             int index = sbAnagram.indexOf(String.valueOf(c));
             if (index != -1) {
@@ -27,7 +29,7 @@ public class AnagramChecker {
         return true;
     }
 
-    public boolean isAnagram2(@NonNull String word, @NonNull String anagram) {
+    public boolean isAnagramBySort(@NonNull String word, @NonNull String anagram) {
         if (checkForLengthAndEmptiness(word, anagram)) {return false;}
         char[] a1 = word.toCharArray();
         char[] a2 = anagram.toCharArray();

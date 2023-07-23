@@ -1,6 +1,6 @@
 package algorithms;
 
-public record AnagramAssertValues(
+public record AnagramAssertionValues(
         String word,
         String anagram,
         boolean answer

@@ -14,6 +14,10 @@ public class MergeSort implements SortAlgorithm {
 
     }
 
+    public static MergeSort getInstance() {
+        return INSTANCE;
+    }
+
     @Override
     public int[] accept(int[] inputArray) {
         int[] inputArrayClone = inputArray.clone();
@@ -62,10 +66,6 @@ public class MergeSort implements SortAlgorithm {
             k++;
         }
         return inputArray;
-    }
-
-    public static MergeSort getInstance() {
-        return INSTANCE;
     }
 
 }

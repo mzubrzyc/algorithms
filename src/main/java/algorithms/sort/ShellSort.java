@@ -2,8 +2,8 @@ package algorithms.sort;
 
 /**
  * <a href="https://www.programiz.com/dsa/shell-sort">programiz.com</a>
- * */
-public class ShellSort implements SortAlgorithm{
+ */
+public class ShellSort implements SortAlgorithm {
 
     private static final ShellSort INSTANCE = new ShellSort();
 
@@ -27,7 +27,7 @@ public class ShellSort implements SortAlgorithm{
             for (int upperIndex = step; upperIndex < size; upperIndex++) {
                 int upperValue = inputArray[upperIndex];
                 int checkIndex = upperIndex;
-                while(checkIndex >= step && inputArray[checkIndex - step] > upperValue) {
+                while (checkIndex >= step && inputArray[checkIndex - step] > upperValue) {
                     inputArray[checkIndex] = inputArray[checkIndex - step];
                     checkIndex -= step;
                 }

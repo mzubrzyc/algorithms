@@ -15,9 +15,10 @@ public class FirstNonRepeatedCharacter {
 
     /**
      * We are using two containers, one contains repeated characters and one unique ones.
+     *
      * @param word sequence of letters we are looking the first unique letter for
      * @return first not repeated character
-     * */
+     */
     public char get(String word) throws LetterNotFoundException {
         Set<Character> repeatedCharacter = new HashSet<>();
         List<Character> nonRepeatedCharacter = new ArrayList<>();
@@ -41,9 +42,10 @@ public class FirstNonRepeatedCharacter {
 
     /**
      * We are using stream
+     *
      * @param word sequence of letters we are looking the first unique letter for
      * @return first not repeated character
-     * */
+     */
     public char getUsingStream(String word) throws LetterNotFoundException {
         Map<Character, Integer> charCounts = new LinkedHashMap<>();
         for (char ch : word.toCharArray()) {

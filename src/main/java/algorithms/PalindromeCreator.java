@@ -13,6 +13,29 @@ public class PalindromeCreator {
         this.randomGenerator = randomGenerator;
     }
 
+    /**
+     * If we have more missing unique letters than draws left, we remove the last letter from result.
+     *
+     * @param numberOfLetters       number of letters to be generated
+     * @param numberOfUniqueLetters number of unique letters generated string consists of
+     * @param result                string consisting of generated letters
+     * @param utilizedUniqueLetters to keep track of utilized letters
+     * @return 0 when we need to repeat a draw, 1 when there is no need to repeat a draw
+     */
+    private static int checkForMissingLetters(
+        int numberOfLetters,
+        int numberOfUniqueLetters,
+        StringBuilder result,
+        Set<Character> utilizedUniqueLetters
+    ) {
+        if ((numberOfUniqueLetters - utilizedUniqueLetters.size()) > numberOfLetters - result.length()) {
+            int lastIndex = result.length() - 1;
+            result.deleteCharAt(lastIndex);
+            return 0;
+        }
+        return 1;
+    }
+
     public String createFor(int numberOfLetters, int numberOfUniqueLetters, int minLetter, int maxLetter) {
         String result;
         int numberOfLettersOneSide;
@@ -45,28 +68,6 @@ public class PalindromeCreator {
             index += checkForMissingLetters(numberOfLetters, numberOfUniqueLetters, result, utilizedUniqueLetters);
         }
         return result.toString();
-    }
-
-    /**
-     * If we have more missing unique letters than draws left, we remove the last letter from result.
-     * @param numberOfLetters number of letters to be generated
-     * @param numberOfUniqueLetters number of unique letters generated string consists of
-     * @param result string consisting of generated letters
-     * @param utilizedUniqueLetters to keep track of utilized letters
-     * @return 0 when we need to repeat a draw, 1 when there is no need to repeat a draw
-     */
-    private static int checkForMissingLetters(
-        int numberOfLetters,
-        int numberOfUniqueLetters,
-        StringBuilder result,
-        Set<Character> utilizedUniqueLetters
-    ) {
-        if ((numberOfUniqueLetters - utilizedUniqueLetters.size()) > numberOfLetters - result.length()) {
-            int lastIndex = result.length() - 1;
-            result.deleteCharAt(lastIndex);
-            return 0;
-        }
-        return 1;
     }
 
 }

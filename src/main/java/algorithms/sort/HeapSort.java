@@ -6,11 +6,15 @@ import algorithms.utils.ArrayUtil;
  * <a href = "https://www.programiz.com/dsa/heap-sort">link</a>
  * Complexity O(n log(n))
  */
-public class HeapSort implements SortAlgorithm{
+public class HeapSort implements SortAlgorithm {
 
     private static final HeapSort INSTANCE = new HeapSort();
 
     private HeapSort() {
+    }
+
+    public static HeapSort getInstance() {
+        return INSTANCE;
     }
 
     public int[] accept(int[] inputArray) {
@@ -59,10 +63,6 @@ public class HeapSort implements SortAlgorithm{
             heapify(inputArray, heapSize, largerItemIndex);
         }
 
-    }
-
-    public static HeapSort getInstance() {
-        return INSTANCE;
     }
 
     private int parentIndex(int childIndex) {
