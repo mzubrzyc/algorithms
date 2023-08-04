@@ -39,4 +39,10 @@ class AnagramCheckerTest {
         );
     }
 
+    record AnagramAssertionValues(
+        String word,
+        String anagram,
+        boolean answer
+    ) {}
+
 }

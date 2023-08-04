@@ -17,6 +17,7 @@ public class HeapSort implements SortAlgorithm {
         return INSTANCE;
     }
 
+    @Override
     public int[] accept(int[] inputArray) {
         int[] inputArrayClone = inputArray.clone();
         buildMaxHeap(inputArrayClone);
