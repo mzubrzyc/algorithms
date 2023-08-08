@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.histogram;
 
 import java.util.Arrays;
 import lombok.experimental.UtilityClass;

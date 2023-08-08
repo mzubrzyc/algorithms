@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.histogram;
 
 import java.util.ArrayDeque;
 import java.util.Deque;

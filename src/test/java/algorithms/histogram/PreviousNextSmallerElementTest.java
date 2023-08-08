@@ -1,4 +1,4 @@
-package algorithms;
+package algorithms.histogram;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
