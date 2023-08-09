@@ -4,7 +4,7 @@ import lombok.experimental.UtilityClass;
 
 /**
  * It calculates max area for each row treating it as histogram.
- * Moving to the next row we merge current values with previous ones and process is repeated.
+ * Moving to the next row we merge current values with previous one and process is repeated.
  * */
 @UtilityClass
 public class MaximumSizeBinaryInRectangleMatrix {
