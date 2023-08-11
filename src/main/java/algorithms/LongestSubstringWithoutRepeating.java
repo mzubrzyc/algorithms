@@ -8,17 +8,17 @@ import lombok.experimental.UtilityClass;
 public class LongestSubstringWithoutRepeating {
 
     public int calculate(String inputLetters) {
-        Set<Character> tempChars = new HashSet<>();
+        Set<Character> tempCharsSet = new HashSet<>();
         int maxUniqueLen = 0;
         int i = 0;
         int j = 0;
         while(j < inputLetters.length()) {
-            if (!tempChars.contains(inputLetters.charAt(j))) {
-                tempChars.add(inputLetters.charAt(j++));
+            if (!tempCharsSet.contains(inputLetters.charAt(j))) {
+                tempCharsSet.add(inputLetters.charAt(j++));
+                maxUniqueLen = Math.max(maxUniqueLen, tempCharsSet.size());
             } else {
-                tempChars.remove(inputLetters.charAt(i++));
+                tempCharsSet.remove(inputLetters.charAt(i++));
             }
-            maxUniqueLen = Math.max(maxUniqueLen, tempChars.size());
         }
         return maxUniqueLen;
     }
